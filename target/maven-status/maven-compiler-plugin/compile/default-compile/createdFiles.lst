@@ -1,0 +1,13 @@
+com\example\serviciohotel\DTO\HotelMessage.class
+com\example\serviciohotel\respository\MunicipioRepository.class
+com\example\serviciohotel\config\RabbitMQConfig.class
+com\example\serviciohotel\ServiciohotelApplication.class
+com\example\serviciohotel\listener\RabbitMQListener.class
+com\example\serviciohotel\respository\HotelRepository.class
+com\example\serviciohotel\config\SecurityConfig.class
+com\example\serviciohotel\controller\RabbitMQController.class
+com\example\serviciohotel\entity\Municipio.class
+com\example\serviciohotel\service\HotelService.class
+com\example\serviciohotel\controller\HotelController.class
+com\example\serviciohotel\entity\Departamento.class
+com\example\serviciohotel\entity\Hotel.class
