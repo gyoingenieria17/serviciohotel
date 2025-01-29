@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.serviciohotel.entity.Hotel;
-import com.example.serviciohotel.respository.HotelRepository;
+import com.example.serviciohotel.entity.Municipio;
+import com.example.serviciohotel.repository.HotelRepository;
+import com.example.serviciohotel.repository.MunicipioRepository;
 
 @Service
 public class HotelService {
@@ -18,6 +20,9 @@ public class HotelService {
 
     @Autowired
     private HotelRepository hotelRepository;
+
+    @Autowired
+    private MunicipioRepository municipioRepository;
 
     public List<Hotel> obtenerTodosLosHoteles() {
         log.info("Obteniendo todos los hoteles");
@@ -36,11 +41,23 @@ public class HotelService {
             throw new IllegalArgumentException("El RNT ya está registrado.");
         }
 
+        // Validar que el idMunicipio no sea null
+        if (hotel.getMunicipio() == null || hotel.getMunicipio().getIdMunicipio() == null) {
+            throw new IllegalArgumentException("El idMunicipio es obligatorio y no puede ser nulo.");
+        }
+
+        // Validar que el municipio exista en la base de datos
+        Municipio municipio = municipioRepository.findById(hotel.getMunicipio().getIdMunicipio())
+            .orElseThrow(() -> new IllegalArgumentException("El municipio con ID " + hotel.getMunicipio().getIdMunicipio() + " no existe."));
+
+        hotel.setMunicipio(municipio); // Asignar el municipio validado
         hotel.setEstado(true); // Estado activo
         hotel.setFechaCreacion(LocalDateTime.now());
         hotel.setFechaActualizacion(LocalDateTime.now());
+
         return hotelRepository.save(hotel);
     }
+
 
     public Hotel actualizarHotel(Integer idHotel, Hotel datosActualizados) {
         log.info("Actualizando hotel con id {}", idHotel);

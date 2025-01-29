@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @Entity
@@ -30,9 +29,6 @@ public class Departamento {
 
     @Column(name = "fecha_actualizacion")
     private LocalDateTime fechaActualizacion;
-
-    @OneToMany(mappedBy = "departamento", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Municipio> municipios;
 
     @PrePersist
     protected void onCreate() {

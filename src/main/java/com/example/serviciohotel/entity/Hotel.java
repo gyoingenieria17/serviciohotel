@@ -18,7 +18,7 @@ public class Hotel {
     @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
-    @Column(name = "nit", nullable = false, unique = true, length = 20)
+    @Column(name = "nit", length = 20)
     private String nit;
 
     @Column(name = "rnt", nullable = false, unique = true, length = 20)

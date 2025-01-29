@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @Entity
@@ -34,9 +33,6 @@ public class Municipio {
     @ManyToOne
     @JoinColumn(name = "iddepartamento", nullable = false)
     private Departamento departamento;
-
-    @OneToMany(mappedBy = "municipio", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Hotel> hoteles;
 
     @PrePersist
     protected void onCreate() {

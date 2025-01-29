@@ -7,7 +7,7 @@ D:\Documents\proyecto lucas\serviciohotel\src\main\java\com\example\serviciohote
 D:\Documents\proyecto lucas\serviciohotel\src\main\java\com\example\serviciohotel\entity\Hotel.java
 D:\Documents\proyecto lucas\serviciohotel\src\main\java\com\example\serviciohotel\entity\Municipio.java
 D:\Documents\proyecto lucas\serviciohotel\src\main\java\com\example\serviciohotel\listener\RabbitMQListener.java
-D:\Documents\proyecto lucas\serviciohotel\src\main\java\com\example\serviciohotel\respository\HotelRepository.java
-D:\Documents\proyecto lucas\serviciohotel\src\main\java\com\example\serviciohotel\respository\MunicipioRepository.java
+D:\Documents\proyecto lucas\serviciohotel\src\main\java\com\example\serviciohotel\repository\HotelRepository.java
+D:\Documents\proyecto lucas\serviciohotel\src\main\java\com\example\serviciohotel\repository\MunicipioRepository.java
 D:\Documents\proyecto lucas\serviciohotel\src\main\java\com\example\serviciohotel\service\HotelService.java
 D:\Documents\proyecto lucas\serviciohotel\src\main\java\com\example\serviciohotel\ServiciohotelApplication.java
