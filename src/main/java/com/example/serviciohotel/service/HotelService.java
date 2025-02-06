@@ -69,6 +69,10 @@ public class HotelService {
                 throw new IllegalArgumentException("El hotel está inactivo y solo puede activarse cambiando el estado a 1.");
             }
             hotelExistente.setEstado(true);
+        }else {
+            if (datosActualizados.getEstado() != null) {
+                hotelExistente.setEstado(datosActualizados.getEstado());
+            }
         }
 
         if (datosActualizados.getNombre() != null) {
